@@ -1,24 +1,68 @@
 # See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
 
+# =====================
+# Environment variables  ← NEVER commit these
+# =====================
+.env
+.env.*
+!.env.example
+
+# =====================
 # Compiled output
+# =====================
 /dist
 /tmp
 /out-tsc
 /bazel-out
 
+# =====================
 # Node
+# =====================
 /node_modules
-npm-debug.log
-yarn-error.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+.npm
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
 
+# =====================
+# Angular specific
+# =====================
+/.angular/cache
+.sass-cache/
+/connect.lock
+/coverage
+/libpeerconnection.log
+testem.log
+/typings
+
+# =====================
+# Prisma
+# =====================
+/src/generated/prisma
+/node_modules/.prisma
+
+# =====================
 # IDEs and editors
+# =====================
+# JetBrains
 .idea/
+*.iml
+*.ipr
+*.iws
+
+# Eclipse
 .project
 .classpath
 .c9/
-*.launch
 .settings/
+
+# Sublime Text
 *.sublime-workspace
+*.sublime-project
 
 # Visual Studio Code
 .vscode/*
@@ -29,18 +73,36 @@ yarn-error.log
 !.vscode/mcp.json
 .history/*
 
-# Miscellaneous
-/.angular/cache
-.sass-cache/
-/connect.lock
+# Vim
+*.swp
+*.swo
+*~
+
+# =====================
+# Testing
+# =====================
 /coverage
-/libpeerconnection.log
-testem.log
-/typings
 __screenshots__/
+*.launch
 
+# =====================
 # System files
+# =====================
 .DS_Store
+.DS_Store?
 Thumbs.db
+ehthumbs.db
+Desktop.ini
 
-/src/generated/prisma
+# =====================
+# Logs
+# =====================
+logs/
+*.log
+
+# =====================
+# Misc
+# =====================
+*.pem
+*.key
+*.cert
